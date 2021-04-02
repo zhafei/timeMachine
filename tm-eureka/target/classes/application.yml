@@ -2,9 +2,11 @@ spring:
   application:
     name: tm-eureka
   cloud:
-    config-enabled: false
+    config:
+      enabled: false
   mvc:
-    favicon-enabled: false
+    favicon:
+      enabled: false
 server:
   port: 8761
 

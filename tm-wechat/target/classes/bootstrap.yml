@@ -1,0 +1,22 @@
+server:
+  port: 8781
+spring:
+  application:
+    name: tm-wechat-service
+  mvc:
+    favicon:
+      enabled: false
+eureka:
+  service-url:
+    defaultZone: http://localhost:8761/eureka/
+  client:
+    enabled: true
+  instance:
+    prefer-ip-address: true #以IP地址注册到服务中心
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000 # 连接超时时间
+        readTimeout: 5000   # 读超时时间
+        loggerLevel: full # 日志级别
