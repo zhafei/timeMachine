@@ -1,12 +1,20 @@
 package com.zhafei.pay.rest;
 
+import com.zhafei.pay.common.vo.Result;
+import com.zhafei.pay.service.WeChatPayService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
+
 @RestController
 public class PayController {
-    @PostMapping(value="wechatpay")
-    public String weChatPay(){
-        return "pay";
+    @Autowired
+    private WeChatPayService weChatPayService;
+    @PostMapping(value="wechatpay/{value}")
+    public Result<Object> weChatPay(@PathVariable  BigDecimal value){
+        return weChatPayService.weChatPay(value);
     }
 }
