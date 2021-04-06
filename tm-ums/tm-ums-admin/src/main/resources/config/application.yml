@@ -10,5 +10,5 @@ spring:
     username: root
     password: 123456
 mybatis:
-  type-aliases-package: com.zhafei.dao
-  mapper-locations: classpath:ums/*Dao.xml
+  type-aliases-package: com.zhafei.ums.dao
+  mapper-locations: classpath*:com/zhafei/ums/**/xml/*Dao.xml

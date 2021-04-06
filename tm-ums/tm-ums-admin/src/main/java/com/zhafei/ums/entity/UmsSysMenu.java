@@ -1,11 +1,11 @@
 package com.zhafei.ums.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * ums_sys_menu
- * @author 
+ * @author
  */
 public class UmsSysMenu implements Serializable {
     private Long id;
@@ -22,9 +22,9 @@ public class UmsSysMenu implements Serializable {
 
     private Integer sort;
 
-    private Date createTime;
+    private LocalDateTime createTime;
 
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     /**
      * 是否菜单 1 是 2 不是
@@ -94,19 +94,19 @@ public class UmsSysMenu implements Serializable {
         this.sort = sort;
     }
 
-    public Date getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
 
-    public Date getUpdateTime() {
+    public LocalDateTime getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
     }
 
