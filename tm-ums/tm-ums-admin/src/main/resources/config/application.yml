@@ -1,0 +1,14 @@
+server:
+  port: 8561
+spring:
+  application:
+    name: tm-ums-service
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/time-machine?useunicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+mybatis:
+  type-aliases-package: com.zhafei.dao
+  mapper-locations: classpath:ums/*Dao.xml
