@@ -17,6 +17,7 @@
         <module>../tm-gateway</module>
         <module>../tm-pay</module>
         <module>../tm-wechat</module>
+        <module>../tm-ums</module>
     </modules>
     <!--版本管理-->
     <properties>
