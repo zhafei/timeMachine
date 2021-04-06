@@ -1,4 +1,4 @@
-package com.zhafei.util;
+package com.zhafei.ums.util;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import sun.misc.BASE64Decoder;
@@ -15,6 +15,7 @@ import java.security.*;
 /**
  * RSA非对称加密
  * 安全
+ * @author yyf
  */
 public class RSAUtil {
     private static final String ENCODE_RULES = "com/zhafei";

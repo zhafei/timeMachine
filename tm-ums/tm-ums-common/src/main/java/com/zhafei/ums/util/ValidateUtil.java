@@ -1,8 +1,14 @@
-package com.zhafei.util;
+package com.zhafei.ums.util;
+
+import com.zhafei.ums.exception.UmsException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 验证工具类
+ * @author yyf
+ */
 public class ValidateUtil {
     /**
      * 验证手机号码
@@ -12,12 +18,14 @@ public class ValidateUtil {
     public static boolean isMobileNO(String mobiles){
         boolean flag = false;
         try{
-            final Pattern HK_PATTERN = Pattern.compile("^(5|6|8|9)\\d{7}$");
-            final Pattern CHINA_PATTERN = Pattern.compile("^((13[0-9])|(14[0,1,4-9])|(15[0-3,5-9])|(16[2,5,6,7])|(17[0-8])|(18[0-9])|(19[0-3,5-9]))\\d{8}$");
+            String hk_check = "^(5|6|8|9)\\d{7}$";
+            String china_check = "^((13[0-9])|(14[0,1,4-9])|(15[0-3,5-9])|(16[2,5,6,7])|(17[0-8])|(18[0-9])|(19[0-3,5-9]))\\d{8}$";
+            final  Pattern HK_PATTERN = Pattern.compile(hk_check);
+            final Pattern CHINA_PATTERN = Pattern.compile(china_check);
             Matcher m = CHINA_PATTERN.matcher(mobiles);
             flag = m.matches()||HK_PATTERN.matcher(mobiles).matches();
         }catch(Exception e){
-            throw new RuntimeException(e);
+            throw new UmsException(e);
         }
         return flag;
     }
@@ -34,7 +42,7 @@ public class ValidateUtil {
             Matcher matcher = regex.matcher(email);
             flag = matcher.matches();
         }catch(Exception e){
-            throw new RuntimeException(e);
+            throw new UmsException(e);
         }
 
         return flag;

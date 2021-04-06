@@ -1,6 +1,9 @@
-package com.zhafei.util;
+package com.zhafei.ums.util;
 
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -63,5 +66,11 @@ public class SystemClock {
     public static String nowDate() {
         return new Timestamp(instance().currentTimeMillis()).toString();
     }
-
+    /**
+     * 精确值是毫秒级别
+     * @return
+     */
+    public static LocalDateTime nowDateTime() {
+        return Instant.ofEpochMilli(instance().currentTimeMillis()).atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
+    }
 }

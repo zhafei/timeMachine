@@ -1,4 +1,4 @@
-package com.zhafei.util;
+package com.zhafei.ums.util;
 
 /**
  * Twitter_Snowflake<br>

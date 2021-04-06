@@ -1,9 +1,9 @@
-package com.zhafei.util;
+package com.zhafei.ums.util;
 
 
 /**
  * 数组工具类
- *
+ * @author yyf
  */
 public class ArrayUtil {
 

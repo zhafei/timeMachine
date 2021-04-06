@@ -1,7 +1,8 @@
-package com.zhafei.util;
+package com.zhafei.ums.util;
 
 /**
  * 字符串工具类
+ * @author yyf
  */
 public class StrUtil {
 	/**

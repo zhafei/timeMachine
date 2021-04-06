@@ -1,7 +1,8 @@
-package com.zhafei.util;
+package com.zhafei.ums.util;
 
 /**
  * 字符串格式化工具
+ * @author yyf
  */
 public class StrFormatterUtil {
 
