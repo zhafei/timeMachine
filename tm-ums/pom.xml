@@ -17,6 +17,7 @@
     <modules>
         <module>tm-ums-portal</module>
         <module>tm-ums-admin</module>
+        <module>tm-ums-common</module>
     </modules>
 
     <dependencies>
