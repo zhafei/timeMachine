@@ -1,4 +1,4 @@
-package com.zhafei.ums.util;
+package com.zhafei.util;
 
 import java.sql.Timestamp;
 import java.util.concurrent.*;
@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * 1亿：4699,29,162.0344827586207%<p>
  * 1000万：480,12,40.0%<p>
  * 100万：50,10,5.0%<p>
- * @author lry
+ * @author yyf
  */
 public class SystemClock {
     private final long period;
