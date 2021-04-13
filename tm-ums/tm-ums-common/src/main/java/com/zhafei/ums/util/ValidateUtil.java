@@ -12,40 +12,35 @@ import java.util.regex.Pattern;
 public class ValidateUtil {
     /**
      * 验证手机号码
-     * @param mobiles
-     * @return
+     * @param mobiles 手机号
+     * @return 是true,反之false
      */
-    public static boolean isMobileNO(String mobiles){
-        boolean flag = false;
+    public static boolean isMobileNo(String mobiles){
         try{
-            String hk_check = "^(5|6|8|9)\\d{7}$";
-            String china_check = "^((13[0-9])|(14[0,1,4-9])|(15[0-3,5-9])|(16[2,5,6,7])|(17[0-8])|(18[0-9])|(19[0-3,5-9]))\\d{8}$";
-            final  Pattern HK_PATTERN = Pattern.compile(hk_check);
-            final Pattern CHINA_PATTERN = Pattern.compile(china_check);
-            Matcher m = CHINA_PATTERN.matcher(mobiles);
-            flag = m.matches()||HK_PATTERN.matcher(mobiles).matches();
+            String hkCheck = "^(5|6|8|9)\\d{7}$";
+            String chinaCheck = "^((13[0-9])|(14[0,1,4-9])|(15[0-3,5-9])|(16[2,5,6,7])|(17[0-8])|(18[0-9])|(19[0-3,5-9]))\\d{8}$";
+            final  Pattern hkPattern = Pattern.compile(hkCheck);
+            final Pattern chinaPattern = Pattern.compile(chinaCheck);
+            Matcher m = chinaPattern.matcher(mobiles);
+            return m.matches()||hkPattern.matcher(mobiles).matches();
         }catch(Exception e){
             throw new UmsException(e);
         }
-        return flag;
     }
     /**
      * 验证邮箱地址是否正确
-     * @param email
-     * @return
+     * @param email 邮箱
+     * @return 是true,反之false
      */
     public static boolean checkEmail(String email){
-        boolean flag = false;
         try{
             String check = "\\w[-\\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\\.)+[A-Za-z]{2,14}";
             Pattern regex = Pattern.compile(check);
             Matcher matcher = regex.matcher(email);
-            flag = matcher.matches();
+            return matcher.matches();
         }catch(Exception e){
             throw new UmsException(e);
         }
-
-        return flag;
     }
 
     public static void main(String[] args) {

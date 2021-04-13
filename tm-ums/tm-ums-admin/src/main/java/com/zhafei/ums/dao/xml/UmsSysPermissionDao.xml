@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhafei.ums.dao.UmsSysPermissionDao">
-  <resultMap id="BaseResultMap" type="com.zhafei.ums.entity.UmsSysPermission">
+  <resultMap id="BaseResultMap" type="com.zhafei.ums.domain.entity.UmsSysPermission">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="permission" jdbcType="VARCHAR" property="permission" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -21,13 +21,13 @@
     delete from ums_sys_permission
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.entity.UmsSysPermission" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.domain.entity.UmsSysPermission" useGeneratedKeys="true">
     insert into ums_sys_permission (permission, `name`, create_time, 
       update_time)
     values (#{permission,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.entity.UmsSysPermission" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.domain.entity.UmsSysPermission" useGeneratedKeys="true">
     insert into ums_sys_permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="permission != null">
@@ -58,7 +58,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhafei.ums.entity.UmsSysPermission">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhafei.ums.domain.entity.UmsSysPermission">
     update ums_sys_permission
     <set>
       <if test="permission != null">
@@ -76,7 +76,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zhafei.ums.entity.UmsSysPermission">
+  <update id="updateByPrimaryKey" parameterType="com.zhafei.ums.domain.entity.UmsSysPermission">
     update ums_sys_permission
     set permission = #{permission,jdbcType=VARCHAR},
       `name` = #{name,jdbcType=VARCHAR},

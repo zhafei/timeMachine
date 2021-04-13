@@ -1,6 +1,7 @@
 package com.zhafei.ums.service;
 
-import com.zhafei.ums.entity.UmsSysMenu;
+import com.zhafei.ums.domain.dto.MenuDto;
+import com.zhafei.ums.domain.entity.UmsSysMenu;
 
 import java.util.List;
 
@@ -17,6 +18,12 @@ public interface ISysMenuService {
      * @return
      */
     public abstract List<UmsSysMenu> selectSysMenus(UmsSysMenu record);
+    /**
+     * 获得菜单集合
+     * @param record
+     * @return
+     */
+    public abstract List<MenuDto> selectMenus(UmsSysMenu record);
 
     /**
      * 新增菜单
@@ -24,4 +31,11 @@ public interface ISysMenuService {
      * @return
      */
     public abstract UmsSysMenu createSysMenu(UmsSysMenu record);
+
+    /**
+     * 构建菜单树结构
+     * @param menuDtoList
+     * @return
+     */
+    public abstract  List<MenuDto> buildMenuTree(List<MenuDto> menuDtoList);
 }

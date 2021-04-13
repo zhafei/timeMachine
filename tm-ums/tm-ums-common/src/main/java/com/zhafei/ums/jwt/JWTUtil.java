@@ -34,18 +34,14 @@ public class JWTUtil {
     public static String createToken(Map<String, String> payloads) {
         final JWTCreator.Builder builder = JWT.create();
         //payload
-        payloads.forEach((k, v) -> {
-            builder.withClaim(k, v);
-        });
+        payloads.forEach(builder::withClaim);
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.SECOND, EXPIRES_TIME);
-        String token = builder.withExpiresAt(calendar.getTime()).sign(Algorithm.HMAC256(SALT));
 
-        return token;
+        return builder.withExpiresAt(calendar.getTime()).sign(Algorithm.HMAC256(SALT));
     }
     /**
      * 验证token合法性
-     *
      * @param token
      * @return
      */

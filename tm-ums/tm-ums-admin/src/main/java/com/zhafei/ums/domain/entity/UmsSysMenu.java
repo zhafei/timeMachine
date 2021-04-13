@@ -1,4 +1,4 @@
-package com.zhafei.ums.entity;
+package com.zhafei.ums.domain.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -124,5 +124,22 @@ public class UmsSysMenu implements Serializable {
 
     public void setHidden(Integer hidden) {
         this.hidden = hidden;
+    }
+
+    @Override
+    public String toString() {
+        return "UmsSysMenu{" +
+                "id=" + id +
+                ", parentId=" + parentId +
+                ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", path='" + path + '\'' +
+                ", css='" + css + '\'' +
+                ", sort=" + sort +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", isMenu=" + isMenu +
+                ", hidden=" + hidden +
+                '}';
     }
 }

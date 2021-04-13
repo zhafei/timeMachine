@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhafei.ums.dao.UmsSysMenuDao">
-  <resultMap id="BaseResultMap" type="com.zhafei.ums.entity.UmsSysMenu">
+  <resultMap id="BaseResultMap" type="com.zhafei.ums.domain.entity.UmsSysMenu">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="parent_id" jdbcType="BIGINT" property="parentId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -24,11 +24,17 @@
     from ums_sys_menu
     where id = #{id,jdbcType=BIGINT}
   </select>
+  <select id="selectList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from ums_sys_menu
+
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from ums_sys_menu
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.entity.UmsSysMenu" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.domain.entity.UmsSysMenu" useGeneratedKeys="true">
     insert into ums_sys_menu (parent_id, `name`, url, 
       `path`, css, sort, create_time, 
       update_time, is_menu, hidden
@@ -38,7 +44,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{isMenu,jdbcType=INTEGER}, #{hidden,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective"  parameterType="com.zhafei.ums.entity.UmsSysMenu"  >
+  <insert id="insertSelective"  parameterType="com.zhafei.ums.domain.entity.UmsSysMenu"  >
     insert into ums_sys_menu
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -111,7 +117,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhafei.ums.entity.UmsSysMenu">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhafei.ums.domain.entity.UmsSysMenu">
     update ums_sys_menu
     <set>
       <if test="parentId != null">
@@ -147,7 +153,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zhafei.ums.entity.UmsSysMenu">
+  <update id="updateByPrimaryKey" parameterType="com.zhafei.ums.domain.entity.UmsSysMenu">
     update ums_sys_menu
     set parent_id = #{parentId,jdbcType=BIGINT},
       `name` = #{name,jdbcType=VARCHAR},

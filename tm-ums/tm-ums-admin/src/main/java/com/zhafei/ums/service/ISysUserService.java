@@ -1,6 +1,6 @@
 package com.zhafei.ums.service;
 
-import com.zhafei.ums.entity.UmsSysUser;
+import com.zhafei.ums.domain.entity.UmsSysUser;
 import com.zhafei.ums.rest.vo.UmsSysUserVO;
 
 import java.util.List;

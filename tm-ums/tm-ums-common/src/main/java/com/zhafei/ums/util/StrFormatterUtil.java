@@ -27,13 +27,15 @@ public class StrFormatterUtil {
 
 		// 初始化定义好的长度以获得更好的性能
 		StringBuilder sbuf = new StringBuilder(strPatternLength + 50);
-
-		int handledPosition = 0;// 记录已经处理到的位置
+		// 记录已经处理到的位置
+		int handledPosition = 0;
 		int delimIndex;// 占位符所在位置
 		for (int argIndex = 0; argIndex < argArray.length; argIndex++) {
 			delimIndex = strPattern.indexOf("{}", handledPosition);
-			if (delimIndex == -1) {// 剩余部分无占位符
-				if (handledPosition == 0) { // 不带占位符的模板直接返回
+			// 剩余部分无占位符
+			if (delimIndex == -1) {
+				// 不带占位符的模板直接返回
+				if (handledPosition == 0) {
 					return strPattern;
 				}
 				// 字符串模板剩余部分不再包含占位符，加入剩余部分后返回结果
@@ -42,8 +44,9 @@ public class StrFormatterUtil {
 			}
 
 			// 转义符
-			if (delimIndex > 0 && strPattern.charAt(delimIndex - 1) == '\\') {// 转义符
-				if (delimIndex > 1 && strPattern.charAt(delimIndex - 2) == '\\') {// 双转义符
+			if (delimIndex > 0 && strPattern.charAt(delimIndex - 1) == '\\') {
+				// 双转义符
+				if (delimIndex > 1 && strPattern.charAt(delimIndex - 2) == '\\') {
 					// 转义符之前还有一个转义符，占位符依旧有效
 					sbuf.append(strPattern, handledPosition, delimIndex - 1);
 					sbuf.append(argArray[argIndex]);

@@ -31,7 +31,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.zhafei.tmeureka.EurekaApplication</mainClass>
+                    <mainClass>com.zhafei.tmeureka.TmEurekaApplication</mainClass>
                 </configuration>
             </plugin>
             <plugin>

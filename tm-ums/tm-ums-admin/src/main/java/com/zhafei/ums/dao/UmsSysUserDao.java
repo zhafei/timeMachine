@@ -1,6 +1,6 @@
 package com.zhafei.ums.dao;
 
-import com.zhafei.ums.entity.UmsSysUser;
+import com.zhafei.ums.domain.entity.UmsSysUser;
 
 public interface UmsSysUserDao {
     int deleteByPrimaryKey(Long id);

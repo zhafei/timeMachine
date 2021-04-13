@@ -121,4 +121,7 @@ public class RandomUtil {
         return baseString.charAt(randomInt(baseString.length()));
     }
 
+    public static void main(String[] args) {
+        System.out.println(randomNumbers(6));
+    }
 }

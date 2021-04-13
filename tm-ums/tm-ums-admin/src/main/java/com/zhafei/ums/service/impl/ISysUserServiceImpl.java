@@ -1,6 +1,6 @@
 package com.zhafei.ums.service.impl;
 
-import com.zhafei.ums.entity.UmsSysUser;
+import com.zhafei.ums.domain.entity.UmsSysUser;
 import com.zhafei.ums.rest.vo.UmsSysUserVO;
 import com.zhafei.ums.service.ISysUserService;
 

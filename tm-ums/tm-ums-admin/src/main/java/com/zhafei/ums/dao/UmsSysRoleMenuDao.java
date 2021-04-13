@@ -1,6 +1,6 @@
 package com.zhafei.ums.dao;
 
-import com.zhafei.ums.entity.UmsSysRoleMenu;
+import com.zhafei.ums.domain.entity.UmsSysRoleMenu;
 
 public interface UmsSysRoleMenuDao {
     int deleteByPrimaryKey(Long id);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhafei.ums.dao.UmsSysUserDao">
-  <resultMap id="BaseResultMap" type="com.zhafei.ums.entity.UmsSysUser">
+  <resultMap id="BaseResultMap" type="com.zhafei.ums.domain.entity.UmsSysUser">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="uid" jdbcType="VARCHAR" property="uid" />
     <result column="username" jdbcType="VARCHAR" property="username" />
@@ -29,7 +29,7 @@
     delete from ums_sys_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.entity.UmsSysUser" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.domain.entity.UmsSysUser" useGeneratedKeys="true">
     insert into ums_sys_user (`uid`, username, `password`, 
       nick_name, head_img_url, phone, 
       email, sex, enabled, 
@@ -39,7 +39,7 @@
       #{email,jdbcType=VARCHAR}, #{sex,jdbcType=BOOLEAN}, #{enabled,jdbcType=BOOLEAN}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.entity.UmsSysUser" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhafei.ums.domain.entity.UmsSysUser" useGeneratedKeys="true">
     insert into ums_sys_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="uid != null">
@@ -112,7 +112,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhafei.ums.entity.UmsSysUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhafei.ums.domain.entity.UmsSysUser">
     update ums_sys_user
     <set>
       <if test="uid != null">
@@ -151,7 +151,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zhafei.ums.entity.UmsSysUser">
+  <update id="updateByPrimaryKey" parameterType="com.zhafei.ums.domain.entity.UmsSysUser">
     update ums_sys_user
     set `uid` = #{uid,jdbcType=VARCHAR},
       username = #{username,jdbcType=VARCHAR},

@@ -1,15 +1,11 @@
 package com.zhafei.ums.service.impl;
 
-import com.zhafei.ums.entity.UmsSysMenu;
+import com.zhafei.common.util.SystemClock;
+import com.zhafei.ums.domain.entity.UmsSysMenu;
 import com.zhafei.ums.service.ISysMenuService;
-import com.zhafei.ums.util.SystemClock;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class ISysMenuServiceImplTest {
     @Autowired

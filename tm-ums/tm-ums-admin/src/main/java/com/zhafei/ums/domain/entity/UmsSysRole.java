@@ -1,4 +1,4 @@
-package com.zhafei.ums.entity;
+package com.zhafei.ums.domain.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

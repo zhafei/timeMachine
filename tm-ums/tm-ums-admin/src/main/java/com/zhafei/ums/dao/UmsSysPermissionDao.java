@@ -1,6 +1,6 @@
 package com.zhafei.ums.dao;
 
-import com.zhafei.ums.entity.UmsSysPermission;
+import com.zhafei.ums.domain.entity.UmsSysPermission;
 
 public interface UmsSysPermissionDao {
     int deleteByPrimaryKey(Long id);

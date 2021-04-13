@@ -1,9 +1,10 @@
 server:
   port: 8561
 spring:
+  profiles:
+    active: common,ums-common
   application:
     name: tm-ums-service
-
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/time-machine?useunicode=true&characterEncoding=utf8

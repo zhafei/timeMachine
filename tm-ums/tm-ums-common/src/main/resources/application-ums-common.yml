@@ -1,0 +1,3 @@
+#邮箱验证码有效时间/秒
+captcha:
+  expiration: 300
