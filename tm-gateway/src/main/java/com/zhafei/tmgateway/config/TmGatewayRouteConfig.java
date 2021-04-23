@@ -14,13 +14,11 @@ public class TmGatewayRouteConfig {
                         .filters(f -> f.stripPrefix(1)
                                 .addResponseHeader("X-Response-Default-Foo", "Default-Bar"))
                         .uri("lb://tm-wechat-service")
-                        .order(0)
                 )
                 .route(r -> r.path("/ums/**")
                         .filters(f -> f.stripPrefix(1)
                                 .addResponseHeader("X-Response-Default-Foo", "Default-Bar"))
                         .uri("lb://tm-ums-service")
-                        .order(0)
                 )
                 .build();
     }
