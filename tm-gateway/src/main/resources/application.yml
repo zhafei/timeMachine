@@ -1,0 +1,30 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: tm-gateway-service
+  mvc-favicon-enabled: false
+  cloud:
+    gateway:
+      discovery-locator-enabled: true
+      # CORS配置
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - HEAD
+              - POST
+              - PUT
+              - DELETE
+              - TRACE
+              - OPTIONS
+              - PATCH
+            allowedHeaders: "*"
+eureka:
+  client:
+    fetchRegistry: true
+    registryFetchIntervalSeconds: 10
+  service-url:
+    defaultZone: http://localhost:8761/eureka/
