@@ -1,7 +1,9 @@
 package com.zhafei.ums.dao;
 
 import com.zhafei.ums.domain.entity.UmsSysUser;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface UmsSysUserDao {
     int deleteByPrimaryKey(Long id);
 
