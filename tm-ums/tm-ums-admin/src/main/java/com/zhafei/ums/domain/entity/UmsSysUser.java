@@ -5,16 +5,24 @@ import java.time.LocalDateTime;
 
 /**
  * ums_sys_user
- * @author 
+ * @author
  */
 public class UmsSysUser implements Serializable {
     private Long id;
 
-    private String uid;
+    private Long uid;
 
     private String username;
 
+    /**
+     * MD5（MD5（pass明文+固定salt）+salt）
+     */
     private String password;
+
+    /**
+     * 盐
+     */
+    private String slat;
 
     /**
      * 昵称
@@ -39,16 +47,26 @@ public class UmsSysUser implements Serializable {
     /**
      * 性别
      */
-    private Boolean sex;
+    private Integer sex;
 
     /**
      * 是否激活
      */
-    private Boolean enabled;
+    private Integer enabled;
 
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
+
+    /**
+     * 注册时间
+     */
+    private LocalDateTime registerTime;
+
+    /**
+     * 最后一次登录时间
+     */
+    private LocalDateTime lastLoginTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -60,11 +78,11 @@ public class UmsSysUser implements Serializable {
         this.id = id;
     }
 
-    public String getUid() {
+    public Long getUid() {
         return uid;
     }
 
-    public void setUid(String uid) {
+    public void setUid(Long uid) {
         this.uid = uid;
     }
 
@@ -82,6 +100,14 @@ public class UmsSysUser implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSlat() {
+        return slat;
+    }
+
+    public void setSlat(String slat) {
+        this.slat = slat;
     }
 
     public String getNickName() {
@@ -116,19 +142,19 @@ public class UmsSysUser implements Serializable {
         this.email = email;
     }
 
-    public Boolean getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(Boolean sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 
-    public Boolean getEnabled() {
+    public Integer getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(Boolean enabled) {
+    public void setEnabled(Integer enabled) {
         this.enabled = enabled;
     }
 
@@ -146,5 +172,21 @@ public class UmsSysUser implements Serializable {
 
     public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public LocalDateTime getRegisterTime() {
+        return registerTime;
+    }
+
+    public void setRegisterTime(LocalDateTime registerTime) {
+        this.registerTime = registerTime;
+    }
+
+    public LocalDateTime getLastLoginTime() {
+        return lastLoginTime;
+    }
+
+    public void setLastLoginTime(LocalDateTime lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
     }
 }
