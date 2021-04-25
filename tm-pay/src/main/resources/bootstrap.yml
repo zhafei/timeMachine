@@ -1,0 +1,17 @@
+server:
+  port: 8771
+spring:
+  application:
+    name: tm-pay-service
+  cloud:
+    nacos:
+      discovery:
+        cluster-name: tm-pay
+        server-addr: 192.168.31.243:8848
+        namespace: 2207c830-a249-41cd-9da2-f6542662cd29
+        group: tm #服务消费者和服务提供者要在同一个组
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#    enabled: true
