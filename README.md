@@ -5,6 +5,8 @@
 springcloud、eureka、gateway、feign
 gateway网关
 eureka停更---使用nacos替代升级，nacos包含服务注册和配置中心
+nacos 服务注册和配置中心
+    安装nacos server
 ~~~feign通过http实现服务调用和负载均衡（ribbon本质）---弃用（升级为openfeign） 
 ~~~
 openfeign 微服务远程调用和客户端负载均衡（loadbalancer）
