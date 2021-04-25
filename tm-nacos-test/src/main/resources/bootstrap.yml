@@ -1,0 +1,18 @@
+server:
+  port: 8782
+spring:
+  application:
+    name: tm-nacos
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.31.243:8848
+        file-extension: yaml
+        namespace: 2207c830-a249-41cd-9da2-f6542662cd29
+        group: tm-nacos
+
+      discovery:
+        cluster-name: tm-nacos-service
+        server-addr: 192.168.31.243:8848
+        namespace: 2207c830-a249-41cd-9da2-f6542662cd29
+        group: tm-nacos
