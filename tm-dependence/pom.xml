@@ -20,6 +20,7 @@
         <module>../tm-ums</module>
         <module>../tm-common</module>
         <module>../tm-message</module>
+        <module>../tm-nacos-test</module>
     </modules>
     <!--版本管理-->
     <properties>
@@ -38,6 +39,28 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--  引入alibaba-cloud 组件集 -->
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-alibaba-dependencies</artifactId>-->
+<!--                <version>2021.1</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+
+            <!--服务注册与发现-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>2021.1</version>
+            </dependency>
+            <!--  配置中心-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>2021.1</version>
+            </dependency>
+
             <!--mybatis依赖-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
@@ -92,6 +115,7 @@
                 <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
                 <version>2.1.5.RELEASE</version>
             </dependency>
+
             <!--  mail-->
             <dependency>
                 <groupId>com.sun.mail</groupId>
