@@ -27,3 +27,16 @@ feign:
         connectTimeout: 5000 # 连接超时时间
         readTimeout: 5000   # 读超时时间
         loggerLevel: full # 日志级别
+# 以下配置可配置在nacos服务端
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: tm-seata
+  enable-auto-data-source-proxy: true
+  service:
+    grouplist:
+      # seata seaver的 地址配置，此处可以集群配置是个数组
+      default: 192.168.31.243:8091
+    vgroup-mapping:
+      # key一定要与tx-service-group一致
+      tm-seata: default
