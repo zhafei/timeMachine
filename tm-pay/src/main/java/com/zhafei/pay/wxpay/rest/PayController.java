@@ -1,7 +1,7 @@
-package com.zhafei.pay.rest;
+package com.zhafei.pay.wxpay.rest;
 
 import com.zhafei.pay.common.vo.Result;
-import com.zhafei.pay.service.WeChatPayService;
+import com.zhafei.pay.wxpay.WeChatPayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

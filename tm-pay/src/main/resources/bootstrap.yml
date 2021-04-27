@@ -10,6 +10,40 @@ spring:
         server-addr: 192.168.31.243:8848
         namespace: 2207c830-a249-41cd-9da2-f6542662cd29
         group: tm #服务消费者和服务提供者要在同一个组
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #数据库相关的配置url  -SSL连接设置为false
+    url: jdbc:mysql://localhost:3306/time-machine?characterEncoding=utf8&useSSL=false
+    #配置用户名
+    username: root
+    #配置密码
+    password: 123456
+  jpa:
+    # 配置 DBMS 类型
+    database: MYSQL
+    # 配置是否将执行的 SQL 输出到日志
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        hbm2ddl:
+          # 配置开启自动更新表结构
+          auto: none
+
+# 以下配置可配置在nacos服务端
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: tm-seata
+  enable-auto-data-source-proxy: true
+  service:
+    grouplist:
+      # seata seaver的 地址配置，此处可以集群配置是个数组
+      default: 192.168.31.243:8091
+    vgroup-mapping:
+        # key一定要与tx-service-group一致
+        tm-seata: default
 #eureka:
 #  client:
 #    service-url:

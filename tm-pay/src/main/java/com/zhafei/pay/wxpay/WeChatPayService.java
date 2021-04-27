@@ -1,4 +1,4 @@
-package com.zhafei.pay.service;
+package com.zhafei.pay.wxpay;
 
 import com.zhafei.pay.common.vo.Result;
 
